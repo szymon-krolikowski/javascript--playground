@@ -12,6 +12,7 @@ let millisecondsUnity = 0;
 
 
 const startCountDown = () => {
+    clearInterval(countTime)
     countTime = setInterval(() => {
       if(millisecondsUnity < 9) {
           millisecondsUnity++
@@ -45,4 +46,9 @@ const startCountDown = () => {
     }, 10)
 }
 
+const stopCountDown = () => {
+  clearInterval(countTime)
+}
+
 startButton.addEventListener("click", startCountDown)
+stopButton.addEventListener("click", stopCountDown)
