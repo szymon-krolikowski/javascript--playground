@@ -20,13 +20,13 @@ let currentMark = 0;
 
 const paintMark = () => {
     colorFull = setInterval(() => {
-      secoundMarks[currentMark].classList.toggle("colorToggle")
-      currentMark++
+      secoundMarks[currentMark].classList.toggle("colorToggle");
+      currentMark++;
       if(currentMark === 59) {
-        currentMark = 0
-      }     
+        currentMark = 0;
+      }     ;
     }, 1000);
-}
+};
 
 const startCountDown = () => {
     clearInterval(countTime);
@@ -61,19 +61,20 @@ const startCountDown = () => {
           currentTime.textContent = `${minutesDecimal}${minutesUnity}:${secoundsDecimal}${secoundsUnity}:${millisecondsDecimal}${millisecondsUnity}`;
       };
     }, 10);
-    paintMark()
+    paintMark();
 };
 
 const stopCountDown = () => {
   clearInterval(countTime);
-  clearInterval(colorFull)
+  clearInterval(colorFull);
 };
 
 const resetCountDown = () => {
   clearInterval(countTime);
+  clearInterval(colorFull);
   secoundMarks.forEach(mark => {
-    mark.classList.remove("colorToggle")
-  })
+    mark.classList.remove("colorToggle");
+  });
   currentMark = 0
   timesArr = [];
   minutesDecimal = 0;
@@ -95,6 +96,7 @@ const measurementCountDown = () => {
     newMeasurement.innerHTML = `<span>${numberMeasurement} lap</span><span>${time}</span>`;
     newMeasurement.classList.add("measurement");
     measurementList.appendChild(newMeasurement);
+    measurementList.prepend(newMeasurement)
   });
   timesArr.pop(currentTime.textContent);
 };
