@@ -9,7 +9,7 @@
 
 body
     width: 100vw
-    height: 100vh
+    min-height: 100vh
     font-family: 'Roboto', sans-serif
     background-color: rgb(227,237,247)
     display: flex
@@ -19,8 +19,8 @@ body
     align-content: center
 
 .clock
-    width: 310px
-    height: 310px
+    width: 300px
+    height: 300px
     background-color: rgb(227,237,247)
     box-shadow: 5px 5px 20px 5px rgb(207, 217, 227)
     position: relative
@@ -28,7 +28,7 @@ body
     justify-content: center
     align-items: center
     border-radius: 50%
-    margin-top: 30px
+    margin-top: 10px
 
 .secound-mark
     position: absolute
@@ -38,7 +38,7 @@ body
 
 @for $i from 1 through 60
     .secound-mark-#{$i}
-        transform: rotate(#{$i*6}deg)  translateY(-132px) 
+        transform: rotate(#{$i*6}deg)  translateY(-128px) 
 
 .time
     color: rgb(49, 69, 106)
@@ -56,7 +56,6 @@ body
 
 .buttons2
     margin-top: 15px
-
 
 
 .button
@@ -81,7 +80,7 @@ body
 
 .laps 
     width: 100%
-    margin: 30px 0px
+    margin: 10px 0px
 
 .lap
     font-weight: bold
