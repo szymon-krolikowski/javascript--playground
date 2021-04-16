@@ -1,6 +1,6 @@
 const buttonClear = document.querySelector(".buttonClear");
-const buttonRoot = document.querySelector(".buttonRoot");
 const buttonPercent = document.querySelector(".buttonPercent");
+const buttonRemoveLastSign = document.querySelector(".buttonRemoveLastSign");
 const buttonDivision = document.querySelector(".buttonDivision");
 const buttonMultiplication = document.querySelector(".buttonMultiplication");
 const buttonSubtraction = document.querySelector(".buttonSubtraction");
@@ -30,6 +30,16 @@ const clearAll = () => {
     paragraphScore.textContent = score
 }
 
+const deleteLastSign = () => {
+    let sliceCurrentAction = currentAction.slice(0, -1)
+    currentAction = sliceCurrentAction
+}
+
+buttonRemoveLastSign.addEventListener("click", () => {
+    deleteLastSign()
+    paragraphAction.textContent = currentAction
+})
+
 buttonsNumber.forEach(button => {
     button.addEventListener("click", () => {
         addNumber(button.textContent)
@@ -47,6 +57,14 @@ buttonsFunction.forEach(button => {
         buttonMultiplication.setAttribute("disabled", true)
         buttonSubtraction.setAttribute("disabled", true)
     })
+})
+
+buttonPercent.addEventListener("click", () => {
+    if(currentAction === "" || currentAction.endsWith("+") || currentAction.endsWith("-") || currentAction.endsWith("*") || currentAction.endsWith("/") || currentAction.endsWith("(") || currentAction.endsWith(")")) {
+        addNumber("0.1*")
+    } else {
+        addNumber("*0.1")
+    }
 })
 
 buttonAddition.addEventListener("click", () => {
@@ -96,6 +114,7 @@ buttonSubtraction.addEventListener("click", () => {
 
 buttonBrackets.addEventListener("click", () => {
     let bracketsArr = ["(", ")"];
+
     addNumber(bracketsArr[bracketNumber])
     bracketNumber++
     if(bracketNumber === 2) {
