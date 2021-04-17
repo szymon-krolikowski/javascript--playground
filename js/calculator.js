@@ -39,6 +39,13 @@ const deleteLastSign = () => {
     paragraphAction.textContent = currentAction;
 };
 
+const isEqualTo = () => {
+    score = eval(currentAction);
+    console.log(score);
+    buttonDot.removeAttribute("disabled", false);
+    paragraphScore.textContent = "= " + score;
+}
+
 const addPercent = () => {
     if(currentAction === "" || currentAction.endsWith("+") || currentAction.endsWith("-") || currentAction.endsWith("*") || currentAction.endsWith("/") || currentAction.endsWith("(") || currentAction.endsWith(")")) {
         addNumber("0.1*");
@@ -124,10 +131,7 @@ buttonBrackets.addEventListener("click", () => {
 });
 
 buttonEqual.addEventListener("click", () => {
-    score = eval(currentAction);
-    console.log(score);
-    buttonDot.removeAttribute("disabled", false);
-    paragraphScore.textContent = "= " + score;
+    isEqualTo();
 });
 
 buttonClear.addEventListener("click", () => {
@@ -160,3 +164,74 @@ buttonsFunction.forEach(button => {
         buttonSubtraction.setAttribute("disabled", true);
     });
 });
+
+const keyboardDetection = (button) => {
+    switch(button.key) {
+        case "1":
+            addNumber("1");
+            break;
+        case "2":
+            addNumber("2");
+            break;
+        case "3":
+            addNumber("3");
+            break;
+        case "4":
+            addNumber("4");
+            break;
+        case "5":
+            addNumber("5");
+            break;
+        case "6":
+            addNumber("6");
+            break;
+        case "7":
+            addNumber("7");
+            break;
+        case "8":
+            addNumber("8");
+            break;
+        case "9":
+            addNumber("9");
+            break;
+        case "0":
+            addNumber("0");
+            break;
+        case ".":
+            addNumber(".");
+            break;
+        case "+":
+            addNumber("+");
+            break;
+        case "-":
+            addNumber("-");
+            break;
+        case "%":
+            addPercent();
+            break;
+        case "/":
+            addNumber("/");
+            break;
+        case "(":
+            addNumber("(");
+            break;
+        case ")":
+            addNumber(")");
+            break;
+        case "Enter":
+            isEqualTo();
+            break;
+    };
+};
+
+document.addEventListener("keydown", (event) => {
+    if(event.key === "Backspace") {
+        if(paragraphScore.textContent === "") {
+            deleteLastSign();
+        } else {
+            clearAll();
+        };
+    };
+});
+
+document.addEventListener('keydown', keyboardDetection);
