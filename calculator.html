@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="css/calculator.css">
     <script defer src="js/calculator.js"></script>
 </head>
-<body>
+<body class="body">
     <div class="wrapper">
+        <div class="toggleButton">
+            <div class="toggleImage">
+                <img class="toggleImageMoon active" width="20px" src="image/moon.png">
+            </div>
+            <div class="toggleImage">
+                <img class="toggleImageSun" width="20px" src="image/sun.png">
+            </div>
+        </div>
         <section class="topSection">
             <p class="paragraphAction paragraph paragraphGray"></p>
             <p class="paragraphScore paragraph"></p>
@@ -17,7 +25,7 @@
         <section class="keyboardSection">
             <div class="keyboardRow">
                 <button class="button buttonClear">AC</button>
-                <button class="button buttonFunction buttonRoot">√</button>
+                <button class="button buttonBrackets">()</button>
                 <button class="button buttonFunction buttonPercent">%</button>
                 <button class="button buttonFunction buttonDivision">/</button>
             </div>
@@ -40,7 +48,7 @@
                 <button class="button buttonFunction buttonAddition">+</button>
             </div>
             <div class="keyboardRow">
-                <button class="button buttonBrackets">()</button>
+                <button class="button buttonFunction buttonRemoveLastSign">C</button>
                 <button class="button buttonNumber buttonWhite">0</button>
                 <button class="button buttonWhite buttonDot">.</button>
                 <button class="button buttonEqual">=</button>
