@@ -9,8 +9,8 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #262634;
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,15 +18,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #262634;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .topSection {
   width: 80%;
   height: 40vh;
-  border-bottom: 2px solid rgba(90, 90, 90, 0.3);
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,10 +44,11 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  border-bottom: 2px solid rgba(90, 90, 90, 0.3);
   padding-bottom: 40px;
+  margin: 0 auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .keyboardSection {
@@ -61,27 +69,31 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .button {
-  border: none;
   width: 15vw;
   height: 12vw;
-  margin: 10px;
   display: inline-block;
-  border-radius: 25%;
-  text-align: center;
   font-size: 25px;
-  background-color: #262634;
-  color: #FF7904;
   font-weight: 500;
+  text-align: center;
+  color: #FF7904;
+  background-color: #262634;
+  border-radius: 25%;
+  border: none;
   -webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .buttonEqual {
-  background-color: #ff7904;
   color: white;
+  background-color: #ff7904;
   -webkit-box-shadow: 0 2px 5px 1px rgba(255, 121, 4, 0.4);
           box-shadow: 0 2px 5px 1px rgba(255, 121, 4, 0.4);
 }
@@ -100,11 +112,103 @@ body {
 
 .paragraphGray {
   font-size: 30px;
-  color: #555556;
   font-weight: 400;
+  color: #555556;
 }
 
 .paragraphScore {
   color: white;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 2%;
+  left: 80%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80px;
+  height: 32.5px;
+  background: red;
+  border-radius: 30px;
+  background-color: #262634;
+  -webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.toggleImage {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.toggleImageMoon,
+.toggleImageSun {
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.active {
+  -webkit-filter: invert(50%) sepia(30%) saturate(2878%) hue-rotate(0deg) brightness(105%) contrast(100%);
+          filter: invert(50%) sepia(30%) saturate(2878%) hue-rotate(0deg) brightness(105%) contrast(100%);
+}
+
+.lightModeButtonNumber {
+  color: #262634;
+  background-color: #efeeee;
+}
+
+.lightModeButtonFunction {
+  background-color: #efeeee;
+}
+
+.lightModeButtonDot {
+  color: #262634;
+  background-color: #efeeee;
+}
+
+.lightModeTheme {
+  background-color: #efeeee;
+}
+
+.lightModeParagraphScore {
+  color: #262634;
+}
+
+.paragraphAction,
+.paragraphScore {
+  word-wrap: break-word;
+}
+
+@media screen and (min-width: 450px) {
+  .wrapper {
+    max-width: 450px;
+    max-height: 98vh;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+    margin: auto auto;
+  }
+  .topSection {
+    width: 80%;
+    height: 40%;
+  }
+  .button {
+    width: 65px;
+    height: 50px;
+  }
 }
 /*# sourceMappingURL=calculator.css.map */
