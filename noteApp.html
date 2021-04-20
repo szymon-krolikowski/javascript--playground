@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myNote</title>
+    <link rel="stylesheet" href="css/noteApp.css">
+</head>
+<body>
+    <div class="wrapper notePage">
+        <p class="paragraph--date"></p>
+        <section class="topSection">
+            <h1 class="headingOne">Notes</h1>
+            <button class="topSection__buttonAddNewNote"><img src="image/plus.png"></button>
+        </section>
+        <input class="searchInput" type="text" placeholder="Search">
+        <section class="noteSection">
+           <article class="noteSectionArticle noteSectionArticleLeft">
+                <div class="note noteLenght40">
+                    <h2 class="headingTwo">Find a job</h2>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur pariatur quasi consectetur ex deleniti. Saepe maiores iste error, minima consectetur ratione reiciendis molestiae, ducimus nam iure et. Dicta eaque aperiam provident, natus, voluptatum deserunt aut nostrum fuga veniam vitae earum expedita nam ipsum! Fuga, repellendus!</p>
+                </div>
+                <div class="note noteLenght70">
+                    <h2 class="headingTwo">Create YT channel</h2>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur pariatur quasi consectetur ex deleniti. Saepe maiores iste error,</p>
+                </div>
+           </article>
+           <article class="noteSectionArticle noteSectionArticleRight">
+                <div class="note noteLenght100">
+                    <h2 class="headingTwo">Watch a movie</h2>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur pariatur quasi consectetur ex deleniti. Saepe maiores iste error, minima consectetur ratione reiciendis molestiae, ducimus nam iure et.</p>
+                </div>
+                <div class="note noteLenght80">
+                    <h2 class="headingTwo">Create YT channel</h2>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur pariatur quasi consectetur ex deleniti. Saepe maiores iste error,</p>
+                </div>
+           </article>
+        </section>
+    </div>
+    <div class="wrapper addNotePage">
+        <p class="paragraph--date"></p>
+        <section class="topSection">
+            <button class="topSection__buttonAddNewNote buttonBack"><img src="image/left-arrow.png"></button>
+            <button class="topSection__buttonAddNewNote buttonAddNote"><img src="image/plus.png"></button>
+        </section>
+        <section class="noteSection">
+           <input class="titleInput" type="text" placeholder="Title">
+           <textarea class="textArea"></textarea>
+        </section>
+    </div>
+    <script src="js/noteApp.js"></script>
+</body>
+</html>
